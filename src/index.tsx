@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import'./style.css'
 //Element1--------------------------------------------------
 // const title=React.createElement('h1',{id:'title'},'Hello React')
 //Element2----------------------------------------------------------
@@ -23,18 +24,17 @@ import ReactDOM from "react-dom/client";
 // }
 
 const Title=()=>{
-  return(
-     <div> 
-       <h1>Hello App Component</h1>        
-     </div>
+  return(      
+       <h1>Hello App Component</h1>      
+     
     )
 }
 const Description=()=>{
   return(
-     <div>        
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi et excepturi repudiandae, recusandae obcaecati tempore suscipit facilis mollitia sapiente vitae a molestias placeat repellat ipsa dolore rem, dolor sit. Provident.</p>
+     <React.Fragment>        
+        <p className="red">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi et excepturi repudiandae, recusandae obcaecati tempore suscipit facilis mollitia sapiente vitae a molestias placeat repellat ipsa dolore rem, dolor sit. Provident.</p>
        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi et excepturi repudiandae, recusandae obcaecati tempore suscipit facilis mollitia sapiente vitae a molestias placeat repellat ipsa dolore rem, dolor sit. Provident.</p>
-     </div>
+     </React.Fragment>
     )
 }
 const App=()=>{
