@@ -1,11 +1,14 @@
 import Header from 'Container/Header/Header'
 import CssBaseline from '@mui/material/CssBaseline'
-import Logo from 'components/Logo/Logo'
+import { StyledEngineProvider } from '@mui/material/styles'
+// import Logo from 'components/Logo/Logo'
 const App = () => {
     return (
         <>
-            <CssBaseline />
-            <Header />
+            <StyledEngineProvider injectFirst>
+                <CssBaseline />
+                <Header />
+            </StyledEngineProvider>
         </>
     )
 }
