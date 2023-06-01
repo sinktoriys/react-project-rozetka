@@ -26,7 +26,15 @@ const ProductList = (props: Props) => {
                     <ProductListItem title="iPhone 14 Pro" />
                 </Grid> */}
                 {productsArray.map(
-                    ({ id, title, description, type, capacity, price }) => (
+                    ({
+                        id,
+                        title,
+                        description,
+                        type,
+                        capacity,
+                        price,
+                        image,
+                    }) => (
                         <Grid item xs={12} sm={6} md={4} key={id}>
                             <ProductListItem
                                 title={title}
@@ -34,6 +42,7 @@ const ProductList = (props: Props) => {
                                 type={type}
                                 capacity={capacity}
                                 price={price}
+                                image={image}
                             />
                         </Grid>
                     )
