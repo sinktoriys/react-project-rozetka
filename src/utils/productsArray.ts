@@ -25,7 +25,7 @@ const productsArray: Product[] = [
         type: 'phone',
         capacity: '128',
         price: 1000,
-        image:"/images/iphone-white1.webp",
+        image:"/images/iphone-white.webp",
     },
     {
         id:3,
