@@ -15,6 +15,8 @@ const App = () => {
         totalPrice: 0,
     })
 
+    // const addProductToCart = () => {}
+
     return (
         <>
             <StyledEngineProvider injectFirst>
