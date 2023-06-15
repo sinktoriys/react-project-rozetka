@@ -9,6 +9,7 @@ type Props = {
         [id: number]: Product
     }
     CartItem?: any
+    removeProductFromCart: (id: number) => void
 }
 const CartProductList = ({
     productsInCart,
