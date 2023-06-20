@@ -33,11 +33,14 @@ const App = () => {
             [id]: (prevState[id] || 0) + count,
         }))
     }
+
     const removeProductFromCart = (id: number) => {
         setProductsInCart((prevState) => omit(prevState, id))
     }
+
     const changeProductQuantity = (id: number, count: number) => {
         setProductsInCart((prevState) => ({
+            ...prevState,
             [id]: count,
         }))
     }
