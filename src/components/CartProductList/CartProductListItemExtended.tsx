@@ -1,14 +1,15 @@
 import { Card, CardContent, Grid, Button } from '@mui/material'
 import { Product } from 'utils/productsArray'
 import DeleteIcon from '@mui/icons-material/Delete'
-import { AppContext } from 'Container/App/App'
-import { useContext } from 'react'
 import Quantity from 'components/Quantity/Quantity'
+import { useAppDispatch } from 'redux/hooks'
+import { changeProductQuantity, removeProductFromCart } from 'redux/cartReducer'
 
 type Props = { product: Product; productCount: number }
 
 const CartProductListItemExtended = ({ product, productCount }: Props) => {
-    const data = useContext(AppContext)
+    const dispatch = useAppDispatch()
+
     return (
         <Grid item xs={12} sm={6} md={4}>
             <Card>
@@ -27,23 +28,29 @@ const CartProductListItemExtended = ({ product, productCount }: Props) => {
                         count={productCount}
                         onDecrementClick={() =>
                             productCount === 1
-                                ? data?.removeProductFromCart(product.id)
-                                : data?.changeProductQuantity(
-                                      product.id,
-                                      productCount - 1
+                                ? dispatch(removeProductFromCart(product.id))
+                                : dispatch(
+                                      changeProductQuantity({
+                                          id: product.id,
+                                          count: productCount - 1,
+                                      })
                                   )
                         }
                         onIncrementClick={() =>
-                            data?.changeProductQuantity(
-                                product.id,
-                                productCount + 1
+                            dispatch(
+                                changeProductQuantity({
+                                    id: product.id,
+                                    count: productCount + 1,
+                                })
                             )
                         }
                         minCount={0}
                     />
                     <Button
                         variant="outlined"
-                        onClick={() => data?.removeProductFromCart(product.id)}
+                        onClick={() =>
+                            dispatch(removeProductFromCart(product.id))
+                        }
                     >
                         <DeleteIcon />
                     </Button>

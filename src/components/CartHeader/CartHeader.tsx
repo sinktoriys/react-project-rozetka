@@ -3,7 +3,7 @@ import CartTotal from 'components/CartTotal/CartTotal'
 import { useAppSelector } from 'redux/hooks'
 
 type Props = {
-    productsInCart: {
+    productsInCart?: {
         [id: number]: number
     }
 }
